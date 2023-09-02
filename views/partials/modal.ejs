@@ -5,20 +5,20 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Mutual Expenditure</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form>
+        <form action="/test" method="post">
           <div class="modal-body">
             <div class="input-group mb-3">
               <span class="input-group-text">Rs.</span>
-              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+              <input type="text" class="form-control" name="amount" aria-label="Amount (to the nearest dollar)" required>
               <span class="input-group-text">.00</span>
             </div>
           
             <div class="input-group">
               <span class="input-group-text">Discription</span>
-              <textarea class="form-control" aria-label="With textarea"></textarea>
+              <textarea class="form-control" name="desc" aria-label="With textarea"></textarea>
             </div>
           </div>
-          <button type="button" class="btn btn-dark"><i class="bi bi-check2"></i> Save</button>
+          <button type="submit" class="btn btn-dark"><i class="bi bi-check2"></i> Save</button>
           <div class="modal-footer"></div>
          <!-- <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

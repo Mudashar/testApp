@@ -5,6 +5,15 @@
   <%- include('./partials/nav.ejs') %>
   <br/><br/><br/><br/>
   <div class="container text-center">
+    <% if(alert === 'success'){ %>
+    <div class="alert alert-success" role="alert">
+        <strong>Successfully!</strong> Added.
+    </div>
+    <% } else if(alert === 'failed'){ %>
+    <div class="alert alert-danger" role="alert">
+        <strong>Failed!</strong> to add.
+    </div>
+    <% } %>
       <div class="row  justify-content-md-center">
         <div class="col col-lg-2"></div>
         <div class="col-md-auto">
@@ -58,6 +67,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="/js/modal.js"></script>
 </body>
 
