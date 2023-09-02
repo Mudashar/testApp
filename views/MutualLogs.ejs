@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+  <%- include('./partials/nav.ejs') %>
+  <br/><br/><br/><br/>
+  <div class="container text-center">
+    <table class="table table-hover">
+        <thead class="bg-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Datetime</th>
+            <th scope="col">Macc</th>
+            <th scope="col">User</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>400</td>
+            <td>4:00-12-23-24</td>
+            <td>jhkusjk676</td>
+            <td>Muda</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>400</td>
+            <td>4:00-12-23-24</td>
+            <td>jhkusjk676</td>
+            <td>Muda</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      <%- include('./partials/modal.ejs') %>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="/js/modal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+  <%- include('./partials/nav.ejs') %>
+  <br/><br/><br/><br/>
+  <div class="container text-center">
+      <div class="row  justify-content-md-center">
+        <div class="col col-lg-2"></div>
+        <div class="col-md-auto">
+          <div class="card" style="width: 20rem;">
+            <div class="card-header">
+              <h5>Dashboard</h5>
+              <!--<ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item"> <a class="nav-link active" aria-current="true" href="#">Active</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+                <li class="nav-item"> <a class="nav-link disabled" aria-disabled="true">Disabled</a> </li>
+              </ul>-->
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="row justify-content-center">
+                    <div class="col-4 fw-bolder fs-7">Mutual:</div>
+                    <div class="col-4"> 33k <span class="badge bg-danger">- 500</span>  </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row justify-content-center">
+                    <div class="col-4 fw-bolder fs-7"> Actual: </div>
+                    <div class="col-4"> 325000 </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row justify-content-center">
+                    <div class="col-4 fw-bolder fs-7"> Travel: </div>
+                    <div class="col-4"> 30k </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+               
+                  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="bi bi-pen"></i> Mutual
+                  </button>
+                 <span class="invisible">--</span>
+                  <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    <i class="bi bi-pen"></i> Travel
+                  </button>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-2"></div>
+      </div>
+      <%- include('./partials/modal.ejs') %>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="/js/modal.js"></script>
+</body>
+
+</html>
