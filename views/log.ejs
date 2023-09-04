@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+  <%- include('./partials/nav.ejs') %>
+  <br/><br/><br/><br/>
+  <div class="container text-center">
+    <div class="container text-center">
+    <% var deb;
+    if(type === '/MutualLogs'){
+        deb = 'Mutual';
+    }else if( type === '/TravelLogs'){
+        deb = 'Travel';
+    }else if( type === '/IncomeLogs') {
+        deb = 'Income';
+    }
+    %>
+    <h3><%= deb %> Logs</h3>
+    <table class="table table-hover">
+        <thead class="bg-dark">
+          <tr>
+            <th scope="col">Rs.</th>
+            <% if(type === '/IncomeLogs'){ %>
+              <th scope="col">Type</th>
+              <th scope="col">Mutual</th>
+              <th scope="col">Travel</th>
+            <% } else {%>
+            <th scope="col"><%= deb %></th>
+            <% }  %>
+            <th scope="col">CreatedAt</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% if(logs.length > 0){
+          logs.forEach( log =>{ %>
+          <tr onclick="window.location='<%= type %>/<%= log._id %>'">
+            <!--<th scope="row">1</th>-->
+            <td><%= log.amount %></td>
+            <% if(type === '/IncomeLogs'){ %>
+              <td><%= log.addin %></td>
+              <td><%= log.mutual %></td>
+            <% } %>
+            <% if(type === '/MutualLogs'){ %>
+            <td><%= log.mutual %></td>
+            <% }
+             if( type === '/TravelLogs'){ %>
+            <td><%= log.travel %></td>
+            <% } %>
+            <td><%= log.createdAt.toDateString() %></td>
+            <td><button type="submit" class="btn btn-secondary" onclick="alert('do you realy want to delte ?')"><i class="bi bi-trash"></i></button></td>
+          </tr>
+          <% }) 
+          }else{ %>
+            <tr>
+              <p> No record found... </p>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <%- include('./partials/modal.ejs') %>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="/js/modal.js"></script>
+</body>
+
+</html>

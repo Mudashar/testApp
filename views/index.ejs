@@ -19,7 +19,10 @@
         <div class="col-md-auto">
           <div class="card" style="width: 20rem;">
             <div class="card-header">
-              <h5>Dashboard</h5>
+              <h5 style="display: inline;">Dashboard</h5>
+              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="float: right;display: inline;">
+                <i class="bi bi-plus-circle-dotted"></i>
+              </button>
               <!--<ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item"> <a class="nav-link active" aria-current="true" href="#">Active</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
@@ -31,19 +34,19 @@
                 <li class="list-group-item">
                   <div class="row justify-content-center">
                     <div class="col-4 fw-bolder fs-7">Mutual:</div>
-                    <div class="col-4"> 33k <span class="badge bg-danger">- 500</span>  </div>
+                    <div class="col-4"> <%= mutual %> <span class="badge bg-danger"> <%= neg %></span>  </div>
                   </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row justify-content-center">
                     <div class="col-4 fw-bolder fs-7"> Actual: </div>
-                    <div class="col-4"> 325000 </div>
+                    <div class="col-4"> <%= actual %> </div>
                   </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row justify-content-center">
                     <div class="col-4 fw-bolder fs-7"> Travel: </div>
-                    <div class="col-4"> 30k </div>
+                    <div class="col-4"> <%= travel %> </div>
                   </div>
                 </li>
               </ul>

@@ -5,11 +5,11 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Mutual Expenditure</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="/test" method="post">
+        <form action="/add-mutual" method="post">
           <div class="modal-body">
             <div class="input-group mb-3">
               <span class="input-group-text">Rs.</span>
-              <input type="text" class="form-control" name="amount" aria-label="Amount (to the nearest dollar)" required>
+              <input type="text" class="form-control" id="mutual-amount" name="amount" aria-label="Amount (to the nearest dollar)" required>
               <span class="input-group-text">.00</span>
             </div>
           
@@ -36,20 +36,61 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Travel Expenditure</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form>
+        <form action="/add-travel" method="post">
           <div class="modal-body">
             <div class="input-group mb-3">
               <span class="input-group-text">Rs.</span>
-              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+              <input type="text" class="form-control" id="travel-amount" name="amount" aria-label="Amount (to the nearest dollar)" required>
               <span class="input-group-text">.00</span>
             </div>
           
             <div class="input-group">
               <span class="input-group-text">Discription</span>
-              <textarea class="form-control" aria-label="With textarea"></textarea>
+              <textarea class="form-control" name="desc" aria-label="With textarea"></textarea>
             </div>
           </div>
-          <button type="button" class="btn btn-dark"><i class="bi bi-check2"></i> Save</button>
+          <button type="submit" class="btn btn-dark"><i class="bi bi-check2"></i> Save</button>
+          <div class="modal-footer"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Income</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/add-income" method="post">
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Rs.</span>
+              <input type="text" class="form-control" id="income-amount" name="amount" aria-label="Amount (to the nearest dollar)" required>
+              <span class="input-group-text">.00</span>
+            </div>
+          
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="addin" id="flexRadioDefault1" value="both" checked/>
+              <label class="form-check-label float-start" for="flexRadioDefault1"> Both </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="addin" id="flexRadioDefault2" value="mutual" />
+              <label class="form-check-label float-start" for="flexRadioDefault2"> Mutual </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="addin" id="flexRadioDefault2" value="travel" />
+              <label class="form-check-label float-start" for="flexRadioDefault3"> Travel </label>
+            </div>
+            
+            <br/>
+            <div class="input-group">
+              <span class="input-group-text">Discription</span>
+              <textarea class="form-control" name="desc" aria-label="With textarea"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark"><i class="bi bi-check2"></i> Save</button>
           <div class="modal-footer"></div>
         </form>
       </div>

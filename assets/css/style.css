@@ -3,3 +3,7 @@ img.logo {
     width: 35px;
     height: 35px;
 }
+
+.clickable:hover {
+    background: green;
+}
