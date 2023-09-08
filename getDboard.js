@@ -9,8 +9,8 @@ const getDboard = (res,alert) => {
         if(x > 1000){
             rem = x % 1000;
             x = x - rem + 1000;
-        }
-        rem = 1000 - rem;
+            rem = 1000 - rem;
+        }       
         res.render('index',{alert: alert, mutual: x, neg: rem ,actual: r.mutual, travel: r.travel});
     })
     .catch(e => console.log(e)); 
