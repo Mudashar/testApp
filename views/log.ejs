@@ -22,12 +22,11 @@
             <th scope="col">Rs.</th>
             <% if(type === '/IncomeLogs'){ %>
               <th scope="col">Type</th>
-              <th scope="col">Mutual</th>
-              <th scope="col">Travel</th>
+              <th scope="col">Mt/Tr</th>
             <% } else {%>
             <th scope="col"><%= deb %></th>
             <% }  %>
-            <th scope="col">CreatedAt</th>
+            <th scope="col">CreatedAt</th>           
           </tr>
         </thead>
         <tbody>
@@ -38,7 +37,13 @@
             <td><%= log.amount %></td>
             <% if(type === '/IncomeLogs'){ %>
               <td><%= log.addin %></td>
-              <td><%= log.mutual %></td>
+                <% if(log.addin === 'mutual'){ %>
+                <td><%= log.mutual %></td>
+                <% }else if(log.addin === 'both'){ %>
+                  <td>m-<%= log.travel %>. t-<%= log.travel %></td>
+                <% }else{%>
+                  <td><%= log.travel %></td>
+                <% } %>
             <% } %>
             <% if(type === '/MutualLogs'){ %>
             <td><%= log.mutual %></td>
