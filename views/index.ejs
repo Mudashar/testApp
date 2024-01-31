@@ -46,7 +46,7 @@
                 <li class="list-group-item">
                   <div class="row justify-content-center">
                     <div class="col-4 fw-bolder fs-7"> Travel: </div>
-                    <div class="col-4"> <%= travel %> </div>
+                    <div class="col-4"> <%= travel %> +150$</div>
                   </div>
                 </li>
               </ul>
@@ -67,10 +67,53 @@
       </div>
       <%- include('./partials/modal.ejs') %>
   </div>
+  <!-- ----------Logs -->
+  <br/><br/><br/><br/>
+    <div class="container text-center">
+    <h3>Recent Transactions</h3>
+    <table class="table table-hover">
+      <thead class="bg-dark">
+        <tr>          
+        </tr>
+      </thead>
+      <tbody>
+      <% if(logs.length > 0){
+        logs.forEach( log =>{ %>
+        <tr>
+          <!--<th scope="row">1</th>-->
+          <td><%= log.amount %><sub class="power-style">Rs.</sub></td>
+            
+            <% if(log.desc != null){ %>
+              <td>"<%= log.desc %>"</td>
+            <% } %>
+            <% if(log.addin == null && log.travel != null){ %>
+              <td><%= log.travel %><sup class="power-red power-style">-T</sup></td>
+            <% } %>
+            <% if(log.addin == null && log.mutual != null){ %>
+              <td><%= log.mutual %><sup class="power-red power-style">-M</sup></td>
+            <% } %>
+            <% if(log.addin == 'both'){ %>
+              <td><%= log.mutual %><sup class="power-green power-style">+M</sup>  <%= log.travel %><sup class="power-green power-style">+T</sup></td>
+            <% } else if(log.addin == 'travel'){ %>
+              <td><%= log.travel %><sup class="power-green power-style">+T</sup></td>
+            <% }else if(log.addin == 'mutual'){ %>
+              <td><%= log.mutual %><sup class="power-green power-style">+M</sup></td>
+            <% } %>
+              <td><%= log.createdAt.toDateString() %></td>
+        </tr>
+        <% }) 
+        }else{ %>
+          <tr>
+            <p> No record found... </p>
+          </tr>
+        <% } %>
+      </tbody>
+      <%- include('./partials/modal.ejs') %>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="/js/modal.js"></script>
 </body>
 

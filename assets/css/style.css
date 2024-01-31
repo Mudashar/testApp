@@ -3,6 +3,15 @@ img.logo {
     width: 35px;
     height: 35px;
 }
+.power-red{
+    color: red;
+}
+.power-green{
+    color: green;
+}
+.power-style{
+    font-style: italic;
+}
 
 .clickable:hover {
     background: green;
